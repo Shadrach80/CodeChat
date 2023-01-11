@@ -35,6 +35,10 @@ app.post('/', async (req, res) => {
             presence_penalty: 0,
     });
 
+    const headers = {
+        'Authorization': `Bearer ${process.env.OPENAI_SECRET_KEY}`,
+      };
+
     res.status(200).send({
         bot: response.data.choices[0].text
     })

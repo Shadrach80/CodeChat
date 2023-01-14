@@ -7,10 +7,12 @@ import  fs  from 'fs';
 dotenv.config();
 
 const configuration = new Configuration ({
+    organization: "org-trum7pXgFuHnOIgv9G5XPYff",
     apiKey: process.env.OPENAI_API_KEY,
 }); 
 
 const openai = new OpenAIApi(Configuration);
+const response = await openai.listEngines();
 
 const app = express();
 app.use(cors());
